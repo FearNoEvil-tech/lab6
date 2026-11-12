@@ -1,0 +1,303 @@
+/* Peer Tutoring Hub */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2937;
+    background-color: #f3f6fa;
+}
+
+/* Welcome page */
+
+.welcome-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f8fbff, #eaf3ff);
+}
+
+.welcome-card {
+    padding: 3rem;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.badge {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    color: #b42318;
+    font-weight: 700;
+    letter-spacing: 0.08rem;
+    background-color: #ffe4e6;
+    border-radius: 999px;
+}
+
+.welcome-card h1 {
+    padding: 0;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    color: #1f2937;
+    background: none;
+    border: 0;
+}
+
+.text-accent {
+    color: #dc3545;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #bb2d3b;
+    border-color: #b02a37;
+}
+
+/* Page heading */
+
+h1 {
+    margin: 0;
+    padding: 18px 36px;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    background-color: #243b53;
+}
+
+/* Request form */
+
+main form {
+    max-width: 900px;
+    margin: 42px auto;
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 28px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(31, 41, 55, 0.12);
+}
+
+/* Remove the duplicate dropdown because radio buttons collect the time */
+main form label[for="preferredtime"],
+main form #preferredtime {
+    display: none;
+}
+
+main form fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 18px 20px;
+    border: 1px solid #d1d9e2;
+    border-radius: 10px;
+    background-color: #f8fafc;
+}
+
+main form fieldset:first-of-type {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+main form fieldset:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+main form legend {
+    padding: 0 8px;
+    color: #243b53;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+main form fieldset div {
+    margin: 12px 0;
+}
+
+main form fieldset label {
+    margin-left: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+main form input[type="checkbox"],
+main form input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    vertical-align: middle;
+    accent-color: #d60000;
+    cursor: pointer;
+}
+
+/* Course */
+
+main form label[for="course"] {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+main form #course {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+/* Help topic */
+
+main form label[for="topic"] {
+    grid-column: 1;
+    grid-row: 4;
+}
+
+main form #topic {
+    grid-column: 1;
+    grid-row: 5;
+}
+
+/* Preferred date */
+
+main form label[for="preferreddate"] {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+main form #preferreddate {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+main form > label {
+    align-self: end;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+main form input:not([type="checkbox"]):not([type="radio"]),
+main form select,
+main form textarea {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 14px;
+    color: #374151;
+    font: inherit;
+    background-color: #ffffff;
+    border: 1px solid #aeb8c5;
+    border-radius: 8px;
+}
+
+main form input:focus,
+main form select:focus,
+main form textarea:focus {
+    outline: 3px solid rgba(75, 131, 189, 0.25);
+    outline-offset: 1px;
+    border-color: #4b83bd;
+}
+
+main form button {
+    grid-column: 1 / -1;
+    grid-row: 6;
+    justify-self: start;
+    margin-top: 8px;
+    padding: 13px 26px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #d60000;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+main form button:hover {
+    background-color: #b90000;
+}
+
+main form button:focus-visible {
+    outline: 3px solid #243b53;
+    outline-offset: 3px;
+}
+
+/* Tutor table */
+
+table {
+    width: calc(100% - 80px);
+    max-width: 900px;
+    margin: 40px auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+caption {
+    margin-bottom: 18px;
+    text-align: left;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+th,
+td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #d6dbe2;
+}
+
+th {
+    background-color: #eef1f4;
+}
+
+/* Footer */
+
+footer {
+    padding: 22px;
+    color: #52606d;
+    text-align: center;
+    background-color: #ffffff;
+    border-top: 1px solid #d6dbe2;
+}
+
+/* Mobile layout */
+
+@media (max-width: 700px) {
+    h1 {
+        padding: 16px 20px;
+        font-size: 21px;
+    }
+
+    main form {
+        grid-template-columns: 1fr;
+        margin: 24px 16px;
+        padding: 24px;
+    }
+
+    main form fieldset:first-of-type,
+    main form fieldset:nth-of-type(2),
+    main form label[for="course"],
+    main form #course,
+    main form label[for="topic"],
+    main form #topic,
+    main form label[for="preferreddate"],
+    main form #preferreddate,
+    main form button {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    main form button {
+        width: 100%;
+    }
+
+    table {
+        width: calc(100% - 32px);
+    }
+}
